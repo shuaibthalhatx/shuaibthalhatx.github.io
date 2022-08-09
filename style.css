@@ -53,12 +53,25 @@
   /*The beginning of something great  */
   body{
     background:#000000;
+    margin:0;
+    padding:0;
+  }
+  .hero{
+    background:linear-gradient( 40deg,black 50%,#B20600 50%);
+    
   }
   ::-webkit-scrollbar{
     width:10px;
+    background:#000000;
+  }
+  ::-webkit-scrollbar-thumb{
+    width: 3px;
+    background: #B20600;
   }
   nav{
     display:flex;
+    /* position: fixed; */
+    width: 100%;
     justify-content: space-between;
   }
   .box{
@@ -69,11 +82,11 @@
     background-repeat: no-repeat;
     position: relative;
   }
-  .box iframe{
+  /* .box iframe{
     position:absolute;
     top:-50px;
     left:-60px;
-  }
+  } */
   nav ul{
     display:flex;
     width:60%;
@@ -92,7 +105,7 @@
   nav ul li:after{
     content: "";
     display:none;
-    border:3px solid #B20600;
+    border:3px solid #000000;
    
   }
   nav ul li:hover{
@@ -102,9 +115,13 @@
     content: "";
     display:block;
     width:0%;
-    border:3px solid #B20600;
+    border:3px solid #000000;
     animation: grow .1s linear 1 forwards;
     /* transition:  2s ease-in; */
+  }
+  nav ul li:nth-child(5):hover::after{
+    animation:none;
+    display:none;
   }
   @keyframes grow {
     0%{
@@ -353,6 +370,20 @@
     inset:0;
     transition: all 2s;
     background:url(./Images/img.jpg);
+  }
+  footer iframe{
+    margin:auto;
+    position: relative;
+    border: 1px solid red;
+    transform: translateX(33vw);
+  }
+  footer iframe::before{
+    content: "";
+    position: absolute;
+    inset:0;
+    display: block;
+    z-index: 5;
+    background: red;
   }
   footer h1{
     text-align: center;
